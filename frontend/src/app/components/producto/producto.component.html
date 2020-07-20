@@ -1,0 +1,31 @@
+
+<p>Busque todos los productos con palabras Palíndromo y obtenga su 50% de descuento</p>
+<span class="btn-group pull-left"> 
+    <input  [(ngModel)]="criterio" placeholder="Buscar" name="criterio">
+</span>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th hidden>_id</th>
+            <th>id</th>
+            <th>Marca</th>
+            <th>Descripcion</th>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Palíndromo (-50%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of (productos | buscador: criterio)">
+        <!-- <tr *ngFor="let item of productos"> -->
+            <td hidden><h5 class="text-left text-secondary">{{item._id}}</h5></td>
+            <td><h5 class="text-left text-secondary">{{item.id}}</h5></td>
+            <td><h5 class="text-left text-secondary">{{item.brand}}</h5></td>
+            <td><h5 class="text-left text-secondary">{{item.description}}</h5></td>
+            <td><img src="https://{{item.image}}" alt="{{item.brand}}" class="img-thumbnail"></td>
+            <td><h5 class="text-left text-secondary">{{item.price}}</h5></td>
+            <td><h5 class="text-left text-secondary">{{item.desc}}</h5></td>
+        </tr>
+    </tbody>
+</table>
